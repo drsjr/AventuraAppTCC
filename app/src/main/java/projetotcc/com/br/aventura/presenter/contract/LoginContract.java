@@ -9,15 +9,23 @@ import android.view.View;
 public interface LoginContract {
 
 
-    interface ViewAction {
+    interface ViewAction extends BaseContract.BasePresenter {
 
-        void setView(View v);
+        void setView (LoginContract.LoginView view);
 
+        void attempLogin(String email, String password);
+
+        boolean errorLogin(String email, String password);
 
     }
 
-    interface LoginView {
+    interface LoginView extends BaseContract.BaseView {
 
+        void attemptLogin();
+
+        void emailError(String msgError);
+
+        void closeActivity();
 
     }
 

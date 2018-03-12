@@ -6,56 +6,55 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
+import io.realm.annotations.Ignore;
 import io.realm.annotations.PrimaryKey;
 
 /**
- * Created by junior on 2/26/18.
+ * Created by junior on 3/11/18.
  */
 
-public class Credencial extends RealmObject implements Parcelable {
+public class Usuario extends RealmObject implements Parcelable {
 
     @PrimaryKey
     @SerializedName("username")
     private String username;
     @SerializedName("password")
     private String password;
-    @SerializedName("token")
+    @SerializedName("favor")
+    private Long favor;
+    @Ignore
     private String token;
 
-    public Credencial(Parcel in) {
-        username = in.readString();
-        password = in.readString();
-        token    = in.readString();
+    public Usuario(Parcel in) {
+        setUsername(in.readString());
+        setPassword(in.readString());
+        setFavor(in.readLong());
+        setToken(in.readString());
     }
 
-    public Credencial(String username, String password) {
-        setPassword(password);
+    public Usuario(String username, String password) {
         setUsername(username);
+        setPassword(password);
     }
 
-    public Credencial (String username, String password, String token) {
-        this(username, password);
-        setToken(token);
-    }
-
-    public Credencial() {
+    public Usuario() {
 
     }
 
-    public static final Creator<Credencial> CREATOR = new ClassLoaderCreator<Credencial>() {
+    public static final Creator<Usuario> CREATOR = new ClassLoaderCreator<Usuario>() {
         @Override
-        public Credencial createFromParcel(Parcel source, ClassLoader loader) {
-            return new Credencial(source);
+        public Usuario createFromParcel(Parcel source, ClassLoader loader) {
+            return new Usuario(source);
         }
 
         @Override
-        public Credencial createFromParcel(Parcel source) {
-            return new Credencial(source);
+        public Usuario createFromParcel(Parcel source) {
+            return new Usuario(source);
         }
 
         @Override
-        public Credencial[] newArray(int size) {
-            return new Credencial[size];
+        public Usuario[] newArray(int size) {
+            return new Usuario[size];
         }
     };
 
@@ -68,6 +67,7 @@ public class Credencial extends RealmObject implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(username);
         dest.writeString(password);
+        dest.writeLong(favor);
         dest.writeString(token);
     }
 
@@ -87,20 +87,19 @@ public class Credencial extends RealmObject implements Parcelable {
         this.password = password;
     }
 
+    public Long getFavor() {
+        return favor;
+    }
+
+    public void setFavor(Long favor) {
+        this.favor = favor;
+    }
+
     public String getToken() {
         return token;
     }
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    @Override
-    public String toString() {
-        return "Credencial{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", token='" + token + '\'' +
-                '}';
     }
 }

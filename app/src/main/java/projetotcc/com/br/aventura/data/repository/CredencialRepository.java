@@ -1,5 +1,7 @@
 package projetotcc.com.br.aventura.data.repository;
 
+import android.content.Context;
+
 import projetotcc.com.br.aventura.data.model.Credencial;
 
 /**
@@ -8,7 +10,18 @@ import projetotcc.com.br.aventura.data.model.Credencial;
 
 public class CredencialRepository extends Repository<Credencial> {
 
-    public CredencialRepository(){
-        super(Credencial.class);
+    private static CredencialRepository instance;
+    private static Context context;
+
+    private CredencialRepository(Context context){
+        super(Credencial.class, context);
+        this.context = context;
+    }
+
+    public static CredencialRepository getInstance(Context context){
+        if(instance == null){
+            instance = new CredencialRepository(context);
+        }
+        return instance;
     }
 }

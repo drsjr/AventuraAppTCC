@@ -1,5 +1,7 @@
 package projetotcc.com.br.aventura.data.repository;
 
+import android.content.Context;
+
 import io.realm.Realm;
 import io.realm.RealmObject;
 
@@ -12,8 +14,9 @@ public abstract class Repository<T extends RealmObject> {
     private Realm realm;
     Class<T> classRealm;
 
-    public Repository(Class<T> _classRealm) {
+    public Repository(Class<T> _classRealm, Context context) {
         this.classRealm = _classRealm;
+        Realm.init(context);
         realm = Realm.getDefaultInstance();
     }
 
