@@ -17,6 +17,8 @@ public interface LoginContract {
 
         boolean errorLogin(String email, String password);
 
+        void finishLogin();
+
     }
 
     interface LoginView extends BaseContract.BaseView {

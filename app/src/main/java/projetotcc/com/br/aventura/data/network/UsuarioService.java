@@ -6,15 +6,15 @@ import projetotcc.com.br.aventura.data.DataManager;
  * Created by junior on 3/11/18.
  */
 
-public class UsuarioService extends DataManager<UsuarioClient> {
+public class UsuarioService extends DataManager<UsuarioCall> {
 
-    private UsuarioClient client;
+    private UsuarioCall client;
 
     public UsuarioService() {
-        client = super.createService(UsuarioClient.class);
+        client = super.createService(UsuarioCall.class);
     }
 
-    public UsuarioClient getService() {
+    public UsuarioCall getService() {
         return client;
     }
 

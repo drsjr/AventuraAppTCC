@@ -1,15 +1,19 @@
 package projetotcc.com.br.aventura.presenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
 import java.io.IOException;
 
 import okhttp3.Headers;
+import projetotcc.com.br.aventura.MainActivity;
 import projetotcc.com.br.aventura.data.model.Authentication;
+import projetotcc.com.br.aventura.data.model.Credencial;
 import projetotcc.com.br.aventura.data.model.Usuario;
 import projetotcc.com.br.aventura.data.network.UsuarioService;
+import projetotcc.com.br.aventura.data.repository.CredencialRepository;
 import projetotcc.com.br.aventura.data.repository.UsuarioRepository;
 import projetotcc.com.br.aventura.presenter.contract.LoginContract;
 import retrofit2.Call;
@@ -25,10 +29,13 @@ public class LoginPresenter implements LoginContract.ViewAction {
     private LoginContract.LoginView view;
     private UsuarioRepository repository;
     private UsuarioService service;
+    private CredencialRepository credencialRepository;
     private Context context;
 
+
+
     public LoginPresenter(Context context) {
-        this.repository = UsuarioRepository.getInstance(context);
+        this.credencialRepository = CredencialRepository.getInstance(context);
         this.service = new UsuarioService();
         this.context = context;
     }
@@ -53,7 +60,7 @@ public class LoginPresenter implements LoginContract.ViewAction {
             return;
         }
 
-        Usuario user = new Usuario(email, password);
+        final Usuario user = new Usuario(email, password);
         Call<Authentication> token = service.getService().getAuthentication(user);
         token.enqueue(new Callback<Authentication>() {
             @Override
@@ -62,14 +69,23 @@ public class LoginPresenter implements LoginContract.ViewAction {
 
                 Toast.makeText(getContext(), "jwt: "+ auth.getToken(), Toast.LENGTH_LONG)
                         .show();
+
+                credencialRepository.insert(new Credencial(
+                        user.getUsername(),
+                        user.getPassword(),
+                        auth.getToken()));
+
+                showProgress(false);
+                finishLogin();
             }
 
             @Override
             public void onFailure(Call<Authentication> call, Throwable t) {
                 Toast.makeText(getContext(), "Deu merda!!", Toast.LENGTH_LONG).show();
+                showProgress(false);
+
             }
         });
-        showProgress(false);
     }
 
     @Override
@@ -82,4 +98,10 @@ public class LoginPresenter implements LoginContract.ViewAction {
         return email.length() > 1 && password.length() > 1;
     }
 
+    @Override
+    public void finishLogin() {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+        view.closeActivity();
+    }
 }

@@ -24,7 +24,7 @@ public abstract class Repository<T extends RealmObject> {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                realm.insert(object);
+                realm.copyToRealmOrUpdate(object);
             }
         });
         return object;

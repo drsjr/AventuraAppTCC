@@ -10,7 +10,7 @@ import retrofit2.http.POST;
  * Created by junior on 3/11/18.
  */
 
-public interface UsuarioClient {
+public interface UsuarioCall {
 
     @POST("/login")
     Call<Authentication> getAuthentication(@Body Usuario usuario);

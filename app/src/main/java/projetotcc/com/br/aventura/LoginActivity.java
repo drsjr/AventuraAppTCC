@@ -39,7 +39,8 @@ import projetotcc.com.br.aventura.presenter.contract.LoginContract;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView, View.OnClickListener {
+public class LoginActivity extends AppCompatActivity
+        implements LoginContract.LoginView, View.OnClickListener {
 
 
     private LoginContract.ViewAction presenter;
