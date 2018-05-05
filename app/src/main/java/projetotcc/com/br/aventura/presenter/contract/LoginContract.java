@@ -19,11 +19,15 @@ public interface LoginContract {
 
         void finishLogin();
 
+        void newRegisterIntent();
+
     }
 
     interface LoginView extends BaseContract.BaseView {
 
         void attemptLogin();
+
+        void newRegister();
 
         void emailError(String msgError);
 

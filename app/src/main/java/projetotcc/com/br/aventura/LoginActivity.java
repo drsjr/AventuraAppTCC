@@ -1,43 +1,13 @@
 package projetotcc.com.br.aventura;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import projetotcc.com.br.aventura.presenter.LoginPresenter;
 import projetotcc.com.br.aventura.presenter.contract.LoginContract;
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 public class LoginActivity extends AppCompatActivity
         implements LoginContract.LoginView, View.OnClickListener {
@@ -50,7 +20,8 @@ public class LoginActivity extends AppCompatActivity
     private EditText mEmailView;
     private EditText mPasswordView;
     private View mLoginFormView;
-    private Button mSign;
+    private Button mSignIn;
+    private Button mSignUp;
 
     @Override
     protected void onStart() {
@@ -68,8 +39,11 @@ public class LoginActivity extends AppCompatActivity
         mEmailView      = (EditText) findViewById(R.id.login_email);
         mPasswordView   = (EditText) findViewById(R.id.login_password);
         mLoginFormView  = (View) findViewById(R.id.login_form);
-        mSign           = (Button) findViewById(R.id.login_sign_button);
-        mSign.setOnClickListener(this);
+        mSignIn         = (Button) findViewById(R.id.login_sign_in_button);
+        mSignUp         = (Button) findViewById(R.id.login_sign_up_button);
+
+        mSignIn.setOnClickListener(this);
+        mSignUp.setOnClickListener(this);
     }
 
     @Override
@@ -96,7 +70,21 @@ public class LoginActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        attemptLogin();
+        switch (v.getId()) {
+            case R.id.login_sign_in_button:
+                attemptLogin();
+                break;
+            case R.id.login_sign_up_button:
+                newRegister();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void newRegister() {
+        presenter.newRegisterIntent();
     }
 }
 

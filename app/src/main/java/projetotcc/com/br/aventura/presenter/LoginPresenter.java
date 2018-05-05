@@ -2,13 +2,9 @@ package projetotcc.com.br.aventura.presenter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.widget.Toast;
-
-import java.io.IOException;
-
-import okhttp3.Headers;
 import projetotcc.com.br.aventura.MainActivity;
+import projetotcc.com.br.aventura.SignUpActivity;
 import projetotcc.com.br.aventura.data.model.Authentication;
 import projetotcc.com.br.aventura.data.model.Credencial;
 import projetotcc.com.br.aventura.data.model.Usuario;
@@ -103,5 +99,11 @@ public class LoginPresenter implements LoginContract.ViewAction {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
         view.closeActivity();
+    }
+
+    @Override
+    public void newRegisterIntent() {
+        Intent intent = new Intent(context, SignUpActivity.class);
+        context.startActivity(intent);
     }
 }

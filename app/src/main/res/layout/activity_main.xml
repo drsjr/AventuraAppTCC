@@ -15,8 +15,6 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-
-
     <FrameLayout
         android:id="@+id/menuContainer"
         android:layout_width="0dp"

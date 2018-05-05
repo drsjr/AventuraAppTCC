@@ -16,20 +16,20 @@ import io.realm.annotations.PrimaryKey;
 public class Usuario extends RealmObject implements Parcelable {
 
     @PrimaryKey
+    @SerializedName("idUsuario")
+    private Long idUsuario;
     @SerializedName("username")
     private String username;
     @SerializedName("password")
     private String password;
     @SerializedName("favor")
     private Long favor;
-    @Ignore
-    private String token;
 
     public Usuario(Parcel in) {
+        setIdUsuario(in.readLong());
         setUsername(in.readString());
         setPassword(in.readString());
         setFavor(in.readLong());
-        setToken(in.readString());
     }
 
     public Usuario(String username, String password) {
@@ -65,10 +65,18 @@ public class Usuario extends RealmObject implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(idUsuario);
         dest.writeString(username);
         dest.writeString(password);
         dest.writeLong(favor);
-        dest.writeString(token);
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getUsername() {
@@ -95,11 +103,4 @@ public class Usuario extends RealmObject implements Parcelable {
         this.favor = favor;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

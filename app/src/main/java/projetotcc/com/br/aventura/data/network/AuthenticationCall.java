@@ -1,19 +1,17 @@
 package projetotcc.com.br.aventura.data.network;
 
 import projetotcc.com.br.aventura.data.model.Authentication;
-import projetotcc.com.br.aventura.data.model.Usuario;
+import projetotcc.com.br.aventura.data.model.Credencial;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 /**
- * Created by junior on 3/11/18.
+ * Created by junior on 4/8/18.
  */
 
-public interface UsuarioCall {
+public interface AuthenticationCall {
 
     @POST("/login")
-    Call<Authentication> getAuthentication(@Body Usuario usuario);
-
-
+    Call<Authentication> token(@Body Credencial credencial);
 }
