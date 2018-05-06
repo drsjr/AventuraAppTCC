@@ -2,36 +2,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/img222"
     tools:context="projetotcc.com.br.aventura.SignUpPessoaFisicaFragment">
 
     <LinearLayout
         android:id="@+id/sigh_up_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        >
 
 
         <EditText
+            android:id="@+id/nome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome"/>
+            android:layout_height="74dp"
+            android:hint="Nome" />
 
         <EditText
+            android:id="@+id/sobrenome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Sobrenome"/>
+            android:layout_height="74dp"
+            android:hint="Sobrenome" />
 
         <EditText
+            android:id="@+id/cpf"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="CPF"/>
+            android:layout_height="74dp"
+            android:hint="CPF" />
 
         <EditText
+            android:id="@+id/datanasc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="74dp"
             android:hint="Data Nascimento"/>
 
+        <Button
+            android:layout_width="136dp"
+            android:layout_height="69dp"
+            android:text="próximo"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+
     </LinearLayout>
+
 
 </ScrollView>

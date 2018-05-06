@@ -42,7 +42,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:text="user"/>
+                    android:text="user" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -91,6 +91,10 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="352dp"
+                android:layout_height="294dp"
+                android:background="@drawable/mapa" />
 
         </LinearLayout>
     </ScrollView>
