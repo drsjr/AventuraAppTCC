@@ -6,7 +6,7 @@ import projetotcc.com.br.aventura.data.DataManager;
  * Created by junior on 3/11/18.
  */
 
-public class CredencialService extends DataManager<CredencialCall> {
+public class CredencialService extends DataManager<CredencialCall>  {
 
         private static CredencialCall call;
 
