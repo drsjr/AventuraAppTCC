@@ -56,7 +56,7 @@ public class LoginPresenter implements LoginContract.ViewAction {
             return;
         }
 
-        final Usuario user = new Usuario(email, password);
+        /*final Usuario user = new Usuario(email, password);
         Call<Authentication> token = service.getService().getAuthentication(user);
         token.enqueue(new Callback<Authentication>() {
             @Override
@@ -81,7 +81,9 @@ public class LoginPresenter implements LoginContract.ViewAction {
                 showProgress(false);
 
             }
-        });
+        });*/
+        finishLogin();
+
     }
 
     @Override
@@ -103,7 +105,7 @@ public class LoginPresenter implements LoginContract.ViewAction {
 
     @Override
     public void newRegisterIntent() {
-        Intent intent = new Intent(context, SignUpActivity.class);
+        Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
 }

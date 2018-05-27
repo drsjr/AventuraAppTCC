@@ -16,6 +16,7 @@ public class PessoaFisica extends RealmObject implements Parcelable {
 
     @PrimaryKey
     private Long idPessoaFisica;
+
     private String nome;
     private String sobrenome;
     private Date dataNascimento;
