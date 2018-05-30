@@ -19,7 +19,11 @@ public class AventuraAdapter extends RecyclerView.Adapter<AventuraAdapter.Holder
 
     private List<String> lista;
 
+
+
     public AventuraAdapter(List<String> lista) {
+
+        lista.add("aaa");
         this.lista = lista;
     }
 

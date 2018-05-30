@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/lightblue"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <ImageView
+        android:layout_margin="30dp"
         android:id="@+id/imagem_aventura"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/social"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -20,7 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:text="Descricao da aventura..."/>
+            android:textStyle="bold"
+            android:layout_marginTop="34dp"
+            android:layout_marginRight="23dp"
+            android:textColor="@color/black"
+
+            android:text="PRECISO DE AJUDA!"/>
 
         <TextView
             android:id="@+id/distancia_aventura"
@@ -28,6 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:textSize="20sp"
-            android:text="Há 2KM de distancia"/>
+            android:layout_marginRight="23dp"
+            android:textColor="@color/black"
+            android:text="Há 2KM de distância"/>
     </LinearLayout>
 </LinearLayout>

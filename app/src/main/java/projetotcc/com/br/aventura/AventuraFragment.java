@@ -52,4 +52,5 @@ public class AventuraFragment extends Fragment {
 
         return view;
     }
+
 }
