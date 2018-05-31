@@ -25,7 +25,9 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".AventuraDetalheActivity" />
+        <activity android:name=".NovaAventuraActivity"></activity>
     </application>
 
 </manifest>

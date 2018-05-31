@@ -1,5 +1,6 @@
 package projetotcc.com.br.aventura.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import projetotcc.com.br.aventura.AventuraDetalheActivity;
 import projetotcc.com.br.aventura.R;
 
 /**
@@ -41,7 +43,7 @@ public class AventuraAdapter extends RecyclerView.Adapter<AventuraAdapter.Holder
         return lista.size();
     }
 
-    class HolderAventura extends RecyclerView.ViewHolder {
+    class HolderAventura extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView  mDescricao;
         private TextView  mDistancia;
@@ -52,6 +54,13 @@ public class AventuraAdapter extends RecyclerView.Adapter<AventuraAdapter.Holder
             mDistancia = itemView.findViewById(R.id.distancia_aventura);
             mDescricao = itemView.findViewById(R.id.descricao_aventura);
             mImagem = itemView.findViewById(R.id.imagem_aventura);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), AventuraDetalheActivity.class);
+            v.getContext().startActivity(intent);
         }
     }
 }

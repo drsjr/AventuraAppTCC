@@ -15,21 +15,10 @@ public class SignUpPessoaFisicaFragment extends Fragment {
     private EditText mSobrenome;
     private EditText mCPF;
     private EditText mDataNasc;
-    private OnFragmentInteractionListener mListener;
 
     public SignUpPessoaFisicaFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SignUpPessoaFisicaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static SignUpPessoaFisicaFragment newInstance() {
         SignUpPessoaFisicaFragment fragment = new SignUpPessoaFisicaFragment();
         Bundle args = new Bundle();
@@ -56,36 +45,8 @@ public class SignUpPessoaFisicaFragment extends Fragment {
         mCPF = (EditText) view.findViewById(R.id.cpf);
         mDataNasc =(EditText) view.findViewById(R.id.datanasc);
 
-        return inflater.inflate(R.layout.fragment_pessoa_fisica_sign_up, container, false);
+        return view;
     }
 
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 
 }

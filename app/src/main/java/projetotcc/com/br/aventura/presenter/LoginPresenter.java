@@ -105,7 +105,7 @@ public class LoginPresenter implements LoginContract.ViewAction {
 
     @Override
     public void newRegisterIntent() {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, SignUpActivity.class);
         context.startActivity(intent);
     }
 }
