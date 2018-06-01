@@ -27,7 +27,15 @@
             android:label="@string/title_activity_main" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".AventuraDetalheActivity" />
-        <activity android:name=".NovaAventuraActivity"></activity>
+        <activity
+            android:name=".NovaAventuraActivity"
+            android:label="Uma Nova Aventura" />
+        <activity
+            android:name=".MinhaAvaliacaoActivity"
+            android:label="Minhas Avaliações" />
+        <activity
+            android:name=".AvaliarActivity"
+            android:label="Avaliar"/>
     </application>
 
 </manifest>

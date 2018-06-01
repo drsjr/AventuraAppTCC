@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/back_main"
+    android:background="@drawable/back_main_adapter"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:padding="5dp"
     android:layout_margin="5dp">
 
     <ImageView
-        android:id="@+id/imagem_aventura"
+        android:id="@+id/imagem_aventura_processo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/social"/>
+        android:src="@mipmap/pergaminho"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,23 +19,23 @@
         android:orientation="vertical"
         android:padding="5dp">
         <TextView
-            android:id="@+id/descricao_aventura"
+            android:id="@+id/descricao_aventura_processo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:text="PRECISO DE AJUDA!"
             android:layout_marginBottom="10dp"/>
 
         <TextView
-            android:id="@+id/distancia_aventura"
+            android:id="@+id/status_aventura_processo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="18sp"
             android:layout_marginTop="23dp"
             android:textColor="@color/black"
-            android:text="Há 2KM de distância"/>
+            android:text="Em Progresso"/>
     </LinearLayout>
 </LinearLayout>

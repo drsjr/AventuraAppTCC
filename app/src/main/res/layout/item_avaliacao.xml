@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/button_main">
+    <TextView
+        android:id="@+id/nome_avaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Nome Avaliador"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:lines="1"/>
+
+    <RatingBar
+        android:id="@+id/score_avaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/descricao_avaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Texto avaliacao, descrevendo do que foi feito!"
+        android:textSize="20sp"/>
+</LinearLayout>

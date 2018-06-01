@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private BottomNavigationView navigation;
     private AventuraFragment mAventura;
     private AventureiroFragment mAventureiro;
+    private MinhaAventuraFragment mMinha;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                     loadAventuras() ;
                     return true;
                 case R.id.navigation_notifications:
+                    loadMinhaAventura();
                     return true;
             }
             return false;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         mAventura = AventuraFragment.newInstance();
         mAventureiro = AventureiroFragment.newInstance();
+        mMinha = MinhaAventuraFragment.newInstance();
 
         navigation.getMenu().getItem(1);
     }
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_nova:
+                novaAventura();
                 break;
             case R.id.action_sair:
                 break;
@@ -94,7 +98,18 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mTransaction.commit();
     }
 
+    private void loadMinhaAventura() {
+        mTransaction = getTransaction();
+        mTransaction.replace(R.id.menuContainer, mMinha, "MinhaAventura");
+        mTransaction.commit();
+    }
+
     private FragmentTransaction getTransaction() {
         return getSupportFragmentManager().beginTransaction();
+    }
+
+    private void novaAventura() {
+        Intent intent = new Intent(this, NovaAventuraActivity.class);
+        startActivity(intent);
     }
 }

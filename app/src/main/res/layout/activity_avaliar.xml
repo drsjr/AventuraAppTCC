@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="projetotcc.com.br.aventura.AvaliarActivity">
+
+    <TextView
+        android:id="@+id/titulo_aventura_avaliar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:text="Juntar 100Kg de Mantimentos!"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:lines="1"/>
+
+    <RatingBar
+        android:id="@+id/score_avaliar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:numStars="5" />
+
+    <EditText
+        android:id="@+id/descricao_nova_aventura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:lines="6"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:scrollHorizontally="false"
+        android:hint="Descreva como o Aventureiro conseguiu enfrentar os desafios empostos por essa aventura!"
+        android:layout_marginBottom="5dp"/>
+    <Button
+        android:background="@drawable/button_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Avaliar"/>
+
+</LinearLayout>

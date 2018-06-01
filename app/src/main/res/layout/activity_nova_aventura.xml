@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="projetotcc.com.br.aventura.NovaAventuraActivity">
+    android:layout_height="wrap_content"
+    tools:context="projetotcc.com.br.aventura.NovaAventuraActivity"
+    android:padding="5dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:text="Título da Jornada"
+            android:background="@drawable/item_text"/>
+        <EditText
+            android:id="@+id/titulo_nova_aventura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:lines="1"
+            android:hint="Em poucas palavras e que mostre sua importancia!"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:text="Descrição dos Desafios"
+            android:background="@drawable/item_text"/>
+
+        <EditText
+            android:id="@+id/descricao_nova_aventura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:lines="6"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:scrollHorizontally="false"
+            android:hint="Descreva como será os desafios enfrentado pelo aventureiro que escolheu essa jornada para lhe ajudar!"
+            android:layout_marginBottom="5dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:text="Habilidades Necessárias"
+            android:background="@drawable/item_text"/>
+
+        <EditText
+            android:id="@+id/habilidade_nova_aventura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:lines="6"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:scrollHorizontally="false"
+            android:hint="Cite as principais habilidades necessárias para concluir esse desafio!"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+</ScrollView>

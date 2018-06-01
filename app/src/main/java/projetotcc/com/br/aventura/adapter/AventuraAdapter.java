@@ -25,7 +25,6 @@ public class AventuraAdapter extends RecyclerView.Adapter<AventuraAdapter.Holder
 
     public AventuraAdapter(List<String> lista) {
 
-        lista.add("aaa");
         this.lista = lista;
     }
 
