@@ -5,11 +5,11 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img222"
+    android:background="@drawable/campo"
     tools:context="projetotcc.com.br.aventura.MainActivity">
 
     <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
+        style="android:attr/progressBarStyleLarge"
         android:id="@+id/login_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
