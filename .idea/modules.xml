@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\AventuraAppTCC\Aventura.iml" filepath="C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\AventuraAppTCC\Aventura.iml" />
-      <module fileurl="file://C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\tcc2\AventuraAppTCC\Aventura.iml" filepath="C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\tcc2\AventuraAppTCC\Aventura.iml" />
       <module fileurl="file://$PROJECT_DIR$/AventuraAppTCC.iml" filepath="$PROJECT_DIR$/AventuraAppTCC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\AventuraAppTCC\app\app.iml" filepath="C:\Users\rafam\OneDrive\Documentos\GitHub\AventuraAppTCC\AventuraAppTCC\app\app.iml" />
     </modules>
   </component>
 </project>
