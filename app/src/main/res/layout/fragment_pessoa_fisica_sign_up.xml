@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:background="@drawable/img222"
+    android:background="@drawable/campo"
     tools:context="projetotcc.com.br.aventura.SignUpPessoaFisicaFragment">
 
     <LinearLayout
